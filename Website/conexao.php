@@ -12,5 +12,7 @@ $conexao = new mysqli($server, $username, $password, $database);
 // Verifica se a conexão foi bem-sucedida
 if (!$conexao) {
     die("Conexão falhou: " . mysqli_connect_error());
-} 
+} else {
+    echo "habemus conexao<br><br>";
+}
 ?>

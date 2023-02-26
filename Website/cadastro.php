@@ -54,8 +54,8 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="endereco">Endereço</label>
-                        <input class="endereco-required" type="text" name="endereco" placeholder="Rua, Bairro, Cidade, Estado">
+                        <label for="ende">Endereço</label>
+                        <input class="endereco-required" type="text" name="ende" placeholder="Rua, Bairro, Cidade, Estado">
                         <span class="span-required">limite de 100 caracteres excedido</span>
                     </div>
 
@@ -66,7 +66,7 @@
 
                     <div class="input-box">
                         <label for="">Confirme sua senha</label>
-                        <input class="senha" type="password" name="senha" placeholder="Sua senha novamente">
+                        <input class="senha" type="password" name="senhaConfirmada" placeholder="Sua senha novamente">
                         <span class="span-required">senhas digitadas não são iguais</span>
                     </div>
 
