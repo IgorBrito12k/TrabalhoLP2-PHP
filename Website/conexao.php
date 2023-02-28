@@ -1,18 +1,21 @@
-<h1>banco de dados teste de conexao</h1>
 <?php
     //dados do banco
+    $dbtype   = "MySQL";
+    $host     = "localhost";
+    $port     = "3306";
     $server   = "mysql_db";
     $username = "root";
     $password = "root";
     $database = "trabalholp2";
     
-// Cria a conexão
-$conexao = new mysqli($server, $username, $password, $database);
-
-// Verifica se a conexão foi bem-sucedida
-if (!$conexao) {
-    die("Conexão falhou: " . mysqli_connect_error());
-} else {
-    echo "habemus conexao<br><br>";
+//vamos conectar
+try {   
+    $conexao = new mysqli($server, $username, $password, $database);
+    // echo "Banco de dados conectado.<br><br>";
+    // echo "Estes são os dados cadastrados com sucesso: <br><br>";
+} catch (Exception $e) {
+    //se houver exceção, exibe
+    die ("Erro ao conectar ao banco de dados: " . $e->getMessage());
 }
 ?>
+

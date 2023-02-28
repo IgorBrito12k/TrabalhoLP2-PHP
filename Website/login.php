@@ -22,7 +22,7 @@
         </div>  
         <!-- criar a div formularios -->
         <div class="container-formulario">
-            <form method="" action="">
+            <form method="post" action="validarlogin.php">
                 <div class="cabecalho-formulario">
                     <h1>Login</h1>
                 </div>
@@ -38,12 +38,15 @@
                     </div>
                 </div><br><br>
                 <a href="">Esqueceu sua senha?</a><br>
-                <button class="botao-logar">Logar</button>
+                <a href="dashboard.php">
+                    <button class="botao-logar">Logar</button>
+                </a>
             </form>
         </div>
     </div>
     
-    <script></script>
 </body>
 
 </html>
+
+
