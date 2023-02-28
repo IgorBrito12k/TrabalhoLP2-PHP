@@ -18,7 +18,7 @@ echo "email: $email <br>";
 echo "endereco: $endereco <br>";
 echo "senha: $senha <br>";
 
-$result_usuarios = "INSERT INTO usuarios (nome, nasc, cpf, celular, email, endereco, senha) 
+$result_usuarios = "insert into usuarios (nome, nasc, cpf, celular, email, endereco, senha) 
     VALUES ('$nome', '$nasc', '$cpf', '$celular', '$email', '$endereco', '$senha')";
 
 //executar a query
