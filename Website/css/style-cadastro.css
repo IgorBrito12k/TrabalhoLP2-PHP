@@ -122,3 +122,8 @@ img {
     padding: 15px 20px;
     cursor: pointer;
 }
+
+.voltar {
+    position: relative;
+    z-index: 800;
+}
