@@ -1,21 +1,23 @@
 <?php
+
     //dados do banco
-    $dbtype   = "MySQL";
-    $host     = "localhost";
-    $port     = "3306";
-    $server   = "mysql_db";
-    $username = "root";
-    $password = "root";
-    $database = "trabalholp2";
-    
-//vamos conectar
-try {   
-    $conexao = new mysqli($server, $username, $password, $database);
-    // echo "Banco de dados conectado.<br><br>";
-    // echo "Estes são os dados cadastrados com sucesso: <br><br>";
-} catch (Exception $e) {
-    //se houver exceção, exibe
-    die ("Erro ao conectar ao banco de dados: " . $e->getMessage());
-}
+    $dbtype   = "mysql";
+    $host     = $_ENV['DB_HOST']     ?? "localhost";
+    $port     = $_ENV['DB_PORT']     ?? "3306";
+    $user     = $_ENV['DB_USER']     ?? "root";
+    $password = $_ENV['DB_PASSWORD'] ?? "senha";
+    $db       = $_ENV['DB_NAME']     ?? "hospitalBD";
+    try
+        {   //vamos conectar
+            $conexao = new PDO($dbtype.":host=".$host.
+            ";port=".$port.";dbname=".$db, $user, $password);
+            echo "<p>Banco de dados conectado.</p>";
+        }
+    catch (PDOException $i)
+    {
+        //se houver exceção, exibe
+        die("Erro: <code>" . $i->getMessage() . "</code>");
+    }
 ?>
+
 

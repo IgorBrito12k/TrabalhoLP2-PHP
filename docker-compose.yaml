@@ -8,9 +8,8 @@ services:
     ports:
       - 9000:80
 
-  mysql_db:
-    image: mysql:latest
-    command: --default-authentication-plugin=mysql_native_password
+  maria_db:
+    image: mariadb:latest
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
