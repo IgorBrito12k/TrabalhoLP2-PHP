@@ -36,16 +36,18 @@ require_once("topo.php");
             echo "endereco: $endereco <br>";
             echo "senha: $senha <br>";
 
-            $result_usuarios = "insert into usuarios (nome, nasc, cpf, celular, email, endereco, senha) 
-                VALUES ('$nome', '$nasc', '$cpf', '$celular', '$email', '$endereco', '$senha')";
-
-            //executar a query
-            $resultado_usuario = mysqli_query($conexao, $result_usuarios);
-
-            //se não houver inserção de dados
-            if (!$result_usuarios){
-                echo "Erro na query: " . mysqli_error($conexao);
-            }
+            try {
+                $sql = "insert into usuarios (nome, nasc, cpf, celular, email, endereco, senha) 
+                VALUES (?, ?, ?, ?, ?, ?, ?)";
+                    $query = $conexao->prepare($sql);
+                    $query->execute([$nome, $nasc, $cpf, $celular, $email, $endereco, $senha]);
+                    $rs = $conexao->lastInsertId()
+                        or die(print_r($query->errorInfo(), true));
+                    echo "<p>Salvo com sucesso!</p>";
+                } catch (PDOException $i) {
+                    //se houver exceção, exibe
+                    die("Erro: <code>" . $i->getMessage() . "</code>");
+                }
         ?>
         <br><br>
 <p>Ja com os dados cadastrado você pode clicar em login e acessar sua conta!</p>

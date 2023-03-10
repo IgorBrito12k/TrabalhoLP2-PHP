@@ -2,11 +2,11 @@
 
     //dados do banco
     $dbtype   = "mysql";
-    $host     = $_ENV['DB_HOST']     ?? "localhost";
-    $port     = $_ENV['DB_PORT']     ?? "3306";
-    $user     = $_ENV['DB_USER']     ?? "root";
-    $password = $_ENV['DB_PASSWORD'] ?? "senha";
-    $db       = $_ENV['DB_NAME']     ?? "hospitalBD";
+    $host     = "mariadb";
+    $port     = "3306";
+    $user     = "user";
+    $password = "senha";
+    $db       = "hospital";
     try
         {   //vamos conectar
             $conexao = new PDO($dbtype.":host=".$host.
@@ -16,7 +16,7 @@
     catch (PDOException $i)
     {
         //se houver exceção, exibe
-        die("Erro: <code>" . $i->getMessage() . "</code>");
+        die("Erro de conexão: <code>" . $i->getMessage() . "</code>");
     }
 ?>
 
