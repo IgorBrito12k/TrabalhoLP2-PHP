@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Bem vindo trabalho de LP2</h1>
-        <p>ta sem tema ainda pq a gente ainda não pensou em nada</p>
+        <h1>Bem vindo ao hospital</h1>
+        <p>Entre ou cadastre-se em nosso sistema hospitalar</p>
         <div class="container-links">
             <h2>Para onde você gostaria de ir?</h2>
             <a href="login.php">

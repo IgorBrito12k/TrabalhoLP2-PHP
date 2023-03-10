@@ -11,7 +11,7 @@
         {   //vamos conectar
             $conexao = new PDO($dbtype.":host=".$host.
             ";port=".$port.";dbname=".$db, $user, $password);
-            echo "<p>Banco de dados conectado.</p>";
+            //echo "<p>Banco de dados conectado.</p>";
         }
     catch (PDOException $i)
     {

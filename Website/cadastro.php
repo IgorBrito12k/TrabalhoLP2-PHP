@@ -19,7 +19,7 @@
 
         <!-- criar a div formularios -->
         <div class="formulario">
-            <form method="POST" action="processa.php" id="form">
+            <form method="POST" action="inserirPessoas.php" id="form">
                 <div class="cabecalho-formulario">
                     <h1>Cadastre-se</h1>
                 </div>
@@ -55,12 +55,6 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="ende">Endereço</label>
-                        <input class="endereco-required" type="text" name="ende" placeholder="Rua, Bairro, Cidade, Estado" required>
-                        <span class="span-required">limite de 100 caracteres excedido</span>
-                    </div>
-
-                    <div class="input-box">
                         <label for="">Senha</label>
                         <input class="senha" type="password" name="senha" placeholder="Digite sua senha" required>
                     </div>
@@ -71,10 +65,19 @@
                         <span class="span-required">senhas digitadas não são iguais</span>
                     </div>
 
+                    <div class="input-box">
+                        <label for="tipo">Tipo de usuário</label>
+                        <select name="tipo">
+                        <option value="1">Administrador</option>
+                        <option value="2">Médico</option>
+                        <option value="3">Paciente</option>
+                        </select>
+                    </div>
                 </div>
                 <a href="./login.php">
                     <button type="submit" class="botao-cadastrar">Cadastrar</button>
                 </a>
+                </div>
             </form>
         </div>
     </div>

@@ -39,11 +39,10 @@ img {
     width: 50%;
     display: flex;
     justify-content: center;
-    justify-content: center;
     /* Deixar os inputs um abaixo do outro */
     flex-direction: column;
     background-color: white;
-    padding: 170px;
+    padding: 156px;
 }
 
 .cabecalho-formulario {
@@ -78,8 +77,8 @@ img {
 .grupo-input {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px 0;
+    flex-direction: row;
+    justify-content:space-between;
 }
 
 .input-box {
@@ -88,7 +87,7 @@ img {
     margin-bottom: 20px;
 }
 
-.input-box input{
+.input-box input, select{
     margin: 8px 0;
     padding: 12px 20px;
     border: none;

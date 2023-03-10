@@ -25,7 +25,7 @@ require_once("topo.php");
             $cpf = filter_input(INPUT_POST, 'cpf');
             $celular = filter_input(INPUT_POST, 'fone');
             $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-            $endereco = filter_input(INPUT_POST, 'ende');
+            $tipo = filter_input(INPUT_POST, 'tipo');
             $senha = filter_input(INPUT_POST, 'senhaConfirmada');
 
             echo "Nome: $nome <br>";
@@ -33,30 +33,29 @@ require_once("topo.php");
             echo "cpf: $cpf <br>";
             echo "celular: $celular <br>";
             echo "email: $email <br>";
-            echo "endereco: $endereco <br>";
+            echo "tipo: $tipo <br>";
             echo "senha: $senha <br>";
 
             try {
-                $sql = "insert into usuarios (nome, nasc, cpf, celular, email, endereco, senha) 
+                $sql = "insert into pessoas (nome, nasc, cpf, celular, email, tipo, senha) 
                 VALUES (?, ?, ?, ?, ?, ?, ?)";
                     $query = $conexao->prepare($sql);
-                    $query->execute([$nome, $nasc, $cpf, $celular, $email, $endereco, $senha]);
+                    $query->execute([$nome, $nasc, $cpf, $celular, $email, $tipo, $senha]);
                     $rs = $conexao->lastInsertId()
                         or die(print_r($query->errorInfo(), true));
-                    echo "<p>Salvo com sucesso!</p>";
+                    echo "<p>Salvo com sucesso!</p><br><br>";
+                    echo "<p>Ja com os dados cadastrado você pode clicar em login e acessar sua conta!</p><br><br>";
+                    echo "<a href='login.php'>Login</a>";
                 } catch (PDOException $i) {
                     //se houver exceção, exibe
                     die("Erro: <code>" . $i->getMessage() . "</code>");
                 }
         ?>
-        <br><br>
-<p>Ja com os dados cadastrado você pode clicar em login e acessar sua conta!</p>
+
     </div>
 
 </body>
 </html>
-
-
 <?php
 require_once("rodape.php");
 ?>
