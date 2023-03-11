@@ -1,5 +1,8 @@
 <?php
+// Inicia a sessão, se ainda não tiver sido iniciada
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,6 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./css/style-topo.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <!-- barra de navegação -->
@@ -15,19 +19,19 @@
             <li><a href="dashboard.php">Início</a></li>
             <li><a href="especialidade.php">Especialidades</a></li>
             <?php
-            if (isset($_SESSION['Plano']))
-                    echo "<li><a href='plano.php'>Plano (".
+            if (isset($_SESSION['Plano'])) {
+                echo "<li><a href='plano.php'>Plano (".
                     $_SESSION['qtde'].")</a></li>";
-                    //$_SESSION['carrinho'] . ")</a></li>";
-            else
+            } else {
                 echo "<li><a href='plano.php'>Plano</a></li>";        
-                echo "<li style='float:right'>";
-            if(isset( $_SESSION['nomeUsuario']))
-                    echo "<a class='active' href='meuPerfi.php'>".
+            }
+            echo "<li style='float:right'>";
+            if(isset($_SESSION['nomeUsuario'])) {
+                echo "<a class='active' href='meuPerfi.php'>".
                     $_SESSION['nomeUsuario']."</a></li>";
-            else
+            } else {
                 echo "<a class='active' href='login.php'>Login</a></li>";
-
+            }
             ?>
         </ul>
         <br><br>
